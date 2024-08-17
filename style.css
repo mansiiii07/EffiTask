@@ -1,0 +1,218 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Body Styling */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #333;
+}
+
+/* Container Styling */
+.container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+  transform: perspective(800px) scale(1);
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.container:hover {
+  transform: perspective(800px) scale(1.05);
+  box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Header Styling */
+h1 {
+  font-size: 2em; /* Smaller size for better fit on smaller screens */
+  margin-bottom: 15px;
+  color: #444;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Container Styling */
+.input-container {
+  display: flex;
+  flex-direction: column; /* Stack vertically on smaller screens */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-container > * {
+  width: 100%; /* Full width on smaller screens */
+}
+
+input[type="text"] {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #a8edea;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+select {
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+button {
+  background-color: #3dd1ca;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.3s ease;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+  background-color: #6cc1c3;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Task List Styling */
+ul#task-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+li.task {
+  background: #f9f9f9;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.3s ease;
+}
+
+li.task.completed {
+  background: #e0f7fa;
+  text-decoration: line-through;
+  color: #888;
+  transform: scale(0.98);
+}
+
+li.task.low {
+  border-left: 5px solid #81c784;
+}
+
+li.task.medium {
+  border-left: 5px solid #ffb74d;
+}
+
+li.task.high {
+  border-left: 5px solid #e57373;
+}
+
+li.task:hover {
+  transform: translateY(-3px) scale(1.03);
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions button {
+  background: none;
+  border: none;
+  color: #a8edea;
+  cursor: pointer;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.task-actions button:hover {
+  color: #6cc1c3;
+  transform: scale(1.2);
+}
+
+/* Controls Styling */
+.controls {
+  display: flex;
+  flex-direction: column; /* Stack vertically on smaller screens */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.controls button {
+  padding: 12px;
+  background: #4a90e2;
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s, transform 0.3s ease;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.controls button:hover {
+  background: #357abd;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Filter and Sort Styling */
+.filter-sort-container {
+  display: flex;
+  flex-direction: column; /* Stack vertically on smaller screens */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.filter-sort-container select {
+  width: 100%; /* Full width on smaller screens */
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.filter-sort-container select:hover {
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  /* For tablets and larger screens */
+  .input-container {
+    flex-direction: row; /* Horizontal layout for input container */
+  }
+
+  .filter-sort-container {
+    flex-direction: row; /* Horizontal layout for filter and sort */
+  }
+
+  .filter-sort-container select {
+    width: 48%; /* Adjust width for horizontal layout */
+  }
+
+  .controls {
+    flex-direction: row; /* Horizontal layout for controls */
+  }
+}
